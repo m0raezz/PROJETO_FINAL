@@ -1,19 +1,19 @@
+
+
+/* RESPONSAVEL POR IMPORTAR O mysql2 */
 import mysql from 'mysql2';
 
-/* const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-}); */
 
+/* RESPONSAVEL POR FAZER A CONEXÃO COM O BANCO DE DADOS */
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Admin@123',
-    database: 'lojadb'
+    host: 'localhost',      /* Local onde será hosteado */
+    user: 'root',           /* O usuario para acessar o banco */
+    password: 'Admin@123',  /* Senha para acessar o banco (caso o banco não tenho senha esse local deve estar em branco) */
+    database: 'lojadb'      /* Nome do banco de dados */
 });
 
+
+/* RESPONSAVEL POR FAZER A VERIFICAÇÃO SE A CONEXÃO COM O BANCO FOI FEITA COM SUCESSO */
 connection.connect((error) => {
     if(error) throw error;
     console.log(`Conectado ao banco de dados: lojadb } `);
